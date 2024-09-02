@@ -1,14 +1,5 @@
 <!DOCTYPE html>
-<!--
-Template Name: Midone - HTML Admin Dashboard Template
-Author: Left4code
-Website: http://www.left4code.com/
-Contact: muhammadrizki@left4code.com
-Purchase: https://themeforest.net/user/left4code/portfolio
-Renew Support: https://themeforest.net/user/left4code/portfolio
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
-<html lang="en">
+<html lang="en" class="light">
 <!-- BEGIN: Head -->
 
 <head>
@@ -25,6 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" href="{{ asset('Rubickv4.0.5') }}/Source/dist/css/app.css" />
     <!-- END: CSS Assets-->
 </head>
+
 <!-- END: Head -->
 
 <body class="py-5">
@@ -617,42 +609,6 @@ License: You must have a valid license purchased only from themeforest(the above
                     <a href="javascript:;.html" class="side-menu side-menu--active">
                         <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
                         <div class="side-menu__title">
-                            Dashboard
-                            <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i>
-                            </div>
-                        </div>
-                    </a>
-                    <ul class="side-menu__sub-open">
-                        <li>
-                            <a href="index.html" class="side-menu side-menu--active">
-                                <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="side-menu__title"> Overview 1 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-dashboard-overview-2.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="side-menu__title"> Overview 2 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-dashboard-overview-3.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="side-menu__title"> Overview 3 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-dashboard-overview-4.html" class="side-menu">
-                                <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="side-menu__title"> Overview 4 </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:;.html" class="side-menu side-menu--active">
-                        <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
-                        <div class="side-menu__title">
                             User Management
                             <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i>
                             </div>
@@ -967,18 +923,19 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- END: Account Menu -->
             </div>
             <!-- END: Top Bar -->
+            <!-- BEGIN: Content -->
             <div class="grid grid-cols-12 gap-6">
                 <div class="col-span-12 2xl:col-span-9">
                     <div class="grid grid-cols-12 gap-6">
                         <div class="col-span-12 mt-8">
                             <div class="intro-y flex items-center h-10">
                                 <h2 class="text-lg font-medium truncate mr-5">
-                                    General Report
+                                    @yield('title')
                                 </h2>
                                 <a href="" class="ml-auto flex items-center text-primary"> <i
                                         data-lucide="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data </a>
                             </div>
-                            <div class="grid grid-cols-6 gap-6 mt-5">
+                            <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
                                 @yield('content')
                             </div>
                         </div>
@@ -987,6 +944,14 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
             <!-- END: Content -->
         </div>
+        <!-- BEGIN: Dark Mode Switcher-->
+        <div class="dark-mode-switcher cursor-pointer shadow-md fixed bottom-0 right-0 box border rounded-full w-40 h-12 flex items-center justify-center z-50 mb-10 mr-10"
+            onclick="toggleDarkMode()">
+            <div class="mr-4 text-slate-600 dark:text-slate-200">Dark Mode</div>
+            <div class="dark-mode-switcher__toggle border"></div>
+        </div>
+
+        <!-- END: Dark Mode Switcher-->
         <script src="{{ asset('Rubickv4.0.5') }}/Source/dist/js/app.js"></script>
 </body>
 
